@@ -194,17 +194,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("../node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var nativescript_angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("../node_modules/nativescript-angular/router/index.js");
 /* harmony import */ var nativescript_angular_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(nativescript_angular_router__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _item_item_detail_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("./app/item/item-detail.component.ts");
-/* harmony import */ var _bus_bus_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("./app/bus/bus.component.ts");
+/* harmony import */ var _item_items_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("./app/item/items.component.ts");
+/* harmony import */ var _item_item_detail_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("./app/item/item-detail.component.ts");
+/* harmony import */ var _bus_bus_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__("./app/bus/bus.component.ts");
+
 
 
 
 
 var routes = [
     { path: "", redirectTo: "/bus", pathMatch: "full" },
-    { path: "bus", component: _bus_bus_component__WEBPACK_IMPORTED_MODULE_3__["BusComponent"] },
-    { path: "item/:id", component: _item_item_detail_component__WEBPACK_IMPORTED_MODULE_2__["ItemDetailComponent"] },
-    { path: "bus", component: _bus_bus_component__WEBPACK_IMPORTED_MODULE_3__["BusComponent"] },
+    { path: "bus", component: _bus_bus_component__WEBPACK_IMPORTED_MODULE_4__["BusComponent"] },
+    { path: "item/:id", component: _item_item_detail_component__WEBPACK_IMPORTED_MODULE_3__["ItemDetailComponent"] },
+    { path: "item", component: _item_items_component__WEBPACK_IMPORTED_MODULE_2__["ItemsComponent"] },
+    { path: "bus", component: _bus_bus_component__WEBPACK_IMPORTED_MODULE_4__["BusComponent"] },
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -318,7 +321,7 @@ var AppModule = /** @class */ (function () {
 /***/ "./app/bus/bus.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<Page xlmns=\"http://schemas.nativescript.org/tns.xsd\">\r\n        <GridLayout *ngIf=\"columna==5\" columns=\"auto,auto,auto,auto,auto\" rows=\"auto,auto,auto,auto\" backgroundColor=\"lightgray\" >\r\n                <template *ngFor=\"let arreglo of Arreglo;let indice = index\">\r\n                        <Image [col]=\"arreglo.columna\" [row]=\"arreglo.fila\" src=\"~/images/asiento.png\"  class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"75\" height=\"75\"></Image>\r\n                        <template *ngIf=\"arreglo.nivel==1\">\r\n                                <Image [col]=\"2\" [row]=\"arreglo.fila\" src=\"~/images/clg.png\"  class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"75\" height=\"75\"></Image>\r\n                                <Image [col]=\"3\" [row]=\"arreglo.fila\" src=\"~/images/clg.png\"  class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"75\" height=\"75\"></Image>\r\n                        </template>\r\n                        <template *ngIf=\"arreglo.nivel==2\">\r\n                                <Image [col]=\"2\" [row]=\"arreglo.fila\" src=\"~/images/clg.png\"  class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"75\" height=\"75\"></Image>\r\n                        </template>\r\n                </template>\r\n        </GridLayout>        \r\n</Page>"
+module.exports = "<Page xlmns=\"http://schemas.nativescript.org/tns.xsd\">\r\n        <ScrollView>\r\n                <GridLayout columns=\"auto\" rows=\"auto,auto\" backgroundColor=\"lightgray\">\r\n\r\n                        <GridLayout col=\"0\" row=\"0\" class=\"grid\" *ngIf=\"columnaniv1==4 \" verticalAlignment=\"top\"  columns=\"auto,auto,auto,auto\" rows=\"auto,auto,auto,auto\" backgroundColor=\"lightgray\" border=\"100\" border-color=\"blue\">\r\n                                <template *ngFor=\"let asiento of Asientos;let indice = index\">\r\n                                        <template *ngIf=\"asiento.nivel==1\">\r\n                                                <Image (tap)=\"rabus(asiento)\" [col]=\"asiento.columna\" [row]=\"asiento.fila\" src=\"urlasientoniv1\"  class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"75\" height=\"75\"></Image>\r\n                                                <Image [col]=\"2\" [row]=\"asiento.fila\" src=\"~/images/clg.png\"  class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"100\" height=\"100\"></Image>\r\n                                                <Image [col]=\"3\" [row]=\"asiento.fila\" src=\"~/images/clg.png\"  class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"100\" height=\"100\"></Image>\r\n                                        </template>              \r\n                                </template>\r\n                        </GridLayout>\r\n\r\n                        <GridLayout col=\"0\" row=\"0\" class=\"grid\" *ngIf=\"columnaniv1==5 \" verticalAlignment=\"top\"  columns=\"auto,auto,auto,auto,auto\" rows=\"auto,auto,auto,auto\" backgroundColor=\"lightgray\" border=\"100\" border-color=\"blue\">\r\n                                <template *ngFor=\"let asiento of Asientos;let indice = index\">\r\n                                        <template *ngIf=\"asiento.nivel==1\">\r\n                                                <Image (tap)=\"rabus(asiento)\" [col]=\"asiento.columna\" [row]=\"asiento.fila\" src=\"urlasientoniv1\"   class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"75\" height=\"75\"></Image>\r\n                                                <Image [col]=\"2\" [row]=\"asiento.fila\" src=\"~/images/clg.png\"  class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"75\" height=\"75\"></Image>\r\n                                                <Image [col]=\"3\" [row]=\"asiento.fila\" src=\"~/images/clg.png\"  class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"75\" height=\"75\"></Image>\r\n                                        </template>\r\n                                </template>\r\n                        </GridLayout>\r\n\r\n                        <GridLayout col=\"0\" row=\"1\" class=\"grid\" *ngIf=\"columnaniv2==4 \" verticalAlignment=\"top\"  columns=\"auto,auto,auto,auto\" rows=\"auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto\" backgroundColor=\"lightgray\" border=\"100\" border-color=\"blue\">\r\n                                <template *ngFor=\"let asiento of Asientos;let indice = index\">\r\n                                        <template *ngIf=\"asiento.nivel==2\">\r\n                                                <Image [col]=\"asiento.columna\"  [row]=\"asiento.fila\" src=\"urlasientoniv2\" class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"100\" height=\"100\"></Image>\r\n                                                <Image [col]=\"2\" [row]=\"asiento.fila\" src=\"~/images/clg.png\"  class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"75\" height=\"75\"></Image>\r\n                                        </template>\r\n                                </template>\r\n                        </GridLayout>  \r\n\r\n                        <GridLayout col=\"0\" row=\"1\" class=\"grid\" *ngIf=\"columnaniv2==5 \" verticalAlignment=\"top\"  columns=\"auto,auto,auto,auto,auto\" rows=\"auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto\" backgroundColor=\"lightgray\" border=\"100\" border-color=\"blue\">\r\n                                <template *ngFor=\"let asiento of Asientos;let indice = index\">\r\n                                        <template *ngIf=\"asiento.nivel==2\">\r\n                                                <Image [col]=\"asiento.columna\" [row]=\"asiento.fila\" src=\"urlasientoniv2\" class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"75\" height=\"75\"></Image>\r\n                                                <Image [col]=\"2\" [row]=\"asiento.fila\" src=\"~/images/clg.png\"  class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"75\" height=\"75\"></Image>\r\n                                        </template>     \r\n                                </template>\r\n                        </GridLayout> \r\n                </GridLayout>\r\n        </ScrollView>\r\n</Page>\r\n"
 
 /***/ }),
 
@@ -331,15 +334,115 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("../node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var tns_core_modules_ui_layouts_grid_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("../node_modules/tns-core-modules/ui/layouts/grid-layout/grid-layout.js");
 /* harmony import */ var tns_core_modules_ui_layouts_grid_layout__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(tns_core_modules_ui_layouts_grid_layout__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("../node_modules/@angular/router/fesm5/router.js");
+
 
 
 var BusComponent = /** @class */ (function () {
-    function BusComponent() {
-        this.columna = 5;
+    function BusComponent(router) {
+        this.router = router;
+        this.columnaniv1 = 0;
+        this.columnaniv2 = 0;
+        this.urlasientoniv2 = "";
+        this.urlasientoniv1 = "";
+        this.isSel = false;
         this.grid = new tns_core_modules_ui_layouts_grid_layout__WEBPACK_IMPORTED_MODULE_1__["GridLayout"];
-        this.Arreglo = new Array({ nivel: 1, fila: 0, columna: 0, tipo: 'A' }, { nivel: 1, fila: 0, columna: 1, tipo: 'A' }, { nivel: 1, fila: 0, columna: 4, tipo: 'A' }, { nivel: 1, fila: 1, columna: 0, tipo: 'A' }, { nivel: 1, fila: 1, columna: 1, tipo: 'A' }, { nivel: 1, fila: 1, columna: 4, tipo: 'A' }, { nivel: 1, fila: 2, columna: 0, tipo: 'A' }, { nivel: 1, fila: 2, columna: 1, tipo: 'A' }, { nivel: 1, fila: 2, columna: 4, tipo: 'A' }, { nivel: 1, fila: 3, columna: 0, tipo: 'A' }, { nivel: 1, fila: 3, columna: 1, tipo: 'A' }, { nivel: 1, fila: 3, columna: 4, tipo: 'A' }, { nivel: 2, fila: 4, columna: 0, tipo: 'A' }, { nivel: 2, fila: 4, columna: 1, tipo: 'A' }, { nivel: 2, fila: 4, columna: 3, tipo: 'A' }, { nivel: 2, fila: 4, columna: 4, tipo: 'A' });
+        this.Asientos = [{ nivel: 1, fila: 0, columna: 0, tipo: 'A', disponibilidad: 1, urlimg: "" },
+            { nivel: 1, fila: 0, columna: 1, tipo: 'A', disponibilidad: 1 },
+            { nivel: 1, fila: 0, columna: 4, tipo: 'A', disponibilidad: 1 },
+            { nivel: 1, fila: 1, columna: 0, tipo: 'A', disponibilidad: 1 },
+            { nivel: 1, fila: 1, columna: 1, tipo: 'A', disponibilidad: 1 },
+            { nivel: 1, fila: 1, columna: 4, tipo: 'A', disponibilidad: 1 },
+            { nivel: 1, fila: 2, columna: 0, tipo: 'A', disponibilidad: 1 },
+            { nivel: 1, fila: 2, columna: 1, tipo: 'A', disponibilidad: 1 },
+            { nivel: 1, fila: 2, columna: 4, tipo: 'A', disponibilidad: 1 },
+            { nivel: 1, fila: 3, columna: 0, tipo: 'A', disponibilidad: 1 },
+            { nivel: 1, fila: 3, columna: 1, tipo: 'A', disponibilidad: 1 },
+            { nivel: 1, fila: 3, columna: 4, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 0, columna: 0, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 0, columna: 1, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 0, columna: 3, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 0, columna: 4, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 1, columna: 0, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 1, columna: 1, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 1, columna: 3, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 1, columna: 4, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 2, columna: 0, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 2, columna: 1, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 2, columna: 3, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 2, columna: 4, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 3, columna: 0, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 3, columna: 1, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 3, columna: 3, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 3, columna: 4, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 4, columna: 0, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 4, columna: 1, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 4, columna: 3, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 4, columna: 4, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 5, columna: 0, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 5, columna: 1, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 5, columna: 3, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 5, columna: 4, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 6, columna: 0, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 6, columna: 1, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 6, columna: 3, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 6, columna: 4, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 7, columna: 0, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 7, columna: 1, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 7, columna: 3, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 7, columna: 4, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 8, columna: 0, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 8, columna: 1, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 8, columna: 3, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 8, columna: 4, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 9, columna: 0, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 9, columna: 1, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 9, columna: 3, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 9, columna: 4, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 10, columna: 0, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 10, columna: 1, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 10, columna: 3, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 10, columna: 4, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 11, columna: 0, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 11, columna: 1, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 11, columna: 3, tipo: 'A', disponibilidad: 1 },
+            { nivel: 2, fila: 11, columna: 4, tipo: 'A', disponibilidad: 1 },
+        ];
+        this.Asientos_sel = [];
     }
     BusComponent.prototype.ngOnInit = function () {
+        this.obtenercol1();
+        this.obtenercol2();
+        console.log(this.Asientos);
+    };
+    BusComponent.prototype.rabus = function (asiento) {
+        this.Asientos_sel.push(asiento);
+        this.cambiarImagen(asiento);
+        console.log(this.Asientos_sel);
+    };
+    BusComponent.prototype.cambiarImagen = function (asiento) {
+        if (asiento.nivel == 1) {
+        }
+    };
+    BusComponent.prototype.obtenercol1 = function () {
+        this.columnaniv1 = 5;
+    };
+    BusComponent.prototype.obtenercol2 = function () {
+        this.columnaniv2 = 4;
+    };
+    BusComponent.prototype.ponerImagen = function () {
+        if (this.columnaniv1 == 4) {
+            this.urlasientoniv1 = "~/images/asiento4.png";
+        }
+        else if (this.columnaniv1 == 5) {
+            this.urlasientoniv1 = "~/images/asiento.png";
+        }
+        if (this.columnaniv2 == 4) {
+            this.urlasientoniv2 = "~/images/asiento4.png";
+        }
+        else if (this.columnaniv2 == 5) {
+            this.urlasientoniv2 = "~/images/asiento.png";
+        }
     };
     BusComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -347,7 +450,7 @@ var BusComponent = /** @class */ (function () {
             template: __webpack_require__("./app/bus/bus.component.html"),
             styles: [__webpack_require__("./app/bus/bus.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
     ], BusComponent);
     return BusComponent;
 }());
@@ -359,7 +462,7 @@ var BusComponent = /** @class */ (function () {
 /***/ "./app/bus/bus.css":
 /***/ (function(module, exports) {
 
-module.exports = "GridLayout{\r\n    border-color: blue;\r\n}"
+module.exports = ".grid{\r\n    border-color: blue;\r\n    border-width: 3px;\r\n    margin:45px;\r\n}\r\n.img{\r\n    margin-left:200px;\r\n}"
 
 /***/ }),
 
