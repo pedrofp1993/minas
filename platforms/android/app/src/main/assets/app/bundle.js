@@ -348,21 +348,21 @@ var BusComponent = /** @class */ (function () {
         this.isSel = false;
         this.grid = new tns_core_modules_ui_layouts_grid_layout__WEBPACK_IMPORTED_MODULE_1__["GridLayout"];
         this.Asientos = [{ nivel: 1, fila: 0, columna: 0, tipo: 'A', disponibilidad: 1, urlimage: "" },
-            { nivel: 1, fila: 0, columna: 1, tipo: 'A', disponibilidad: 1, urlimage: "" },
-            { nivel: 1, fila: 0, columna: 4, tipo: 'A', disponibilidad: 1, urlimage: "" },
-            { nivel: 1, fila: 1, columna: 0, tipo: 'A', disponibilidad: 1, urlimage: "" },
-            { nivel: 1, fila: 1, columna: 1, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 1, fila: 0, columna: 1, tipo: 'A', disponibilidad: 0, urlimage: "" },
+            { nivel: 1, fila: 0, columna: 4, tipo: 'A', disponibilidad: 0, urlimage: "" },
+            { nivel: 1, fila: 1, columna: 0, tipo: 'A', disponibilidad: 0, urlimage: "" },
+            { nivel: 1, fila: 1, columna: 1, tipo: 'A', disponibilidad: 0, urlimage: "" },
             { nivel: 1, fila: 1, columna: 4, tipo: 'A', disponibilidad: 1, urlimage: "" },
-            { nivel: 1, fila: 2, columna: 0, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 1, fila: 2, columna: 0, tipo: 'A', disponibilidad: 0, urlimage: "" },
             { nivel: 1, fila: 2, columna: 1, tipo: 'A', disponibilidad: 1, urlimage: "" },
             { nivel: 1, fila: 2, columna: 4, tipo: 'A', disponibilidad: 1, urlimage: "" },
-            { nivel: 1, fila: 3, columna: 0, tipo: 'A', disponibilidad: 1, urlimage: "" },
-            { nivel: 1, fila: 3, columna: 1, tipo: 'A', disponibilidad: 1, urlimage: "" },
-            { nivel: 1, fila: 3, columna: 4, tipo: 'A', disponibilidad: 1, urlimage: "" },
-            { nivel: 2, fila: 0, columna: 0, tipo: 'A', disponibilidad: 1, urlimage: "" },
-            { nivel: 2, fila: 0, columna: 1, tipo: 'A', disponibilidad: 1, urlimage: "" },
-            { nivel: 2, fila: 0, columna: 3, tipo: 'A', disponibilidad: 1, urlimage: "" },
-            { nivel: 2, fila: 0, columna: 4, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 1, fila: 3, columna: 0, tipo: 'A', disponibilidad: 0, urlimage: "" },
+            { nivel: 1, fila: 3, columna: 1, tipo: 'A', disponibilidad: 0, urlimage: "" },
+            { nivel: 1, fila: 3, columna: 4, tipo: 'A', disponibilidad: 0, urlimage: "" },
+            { nivel: 2, fila: 0, columna: 0, tipo: 'A', disponibilidad: 0, urlimage: "" },
+            { nivel: 2, fila: 0, columna: 1, tipo: 'A', disponibilidad: 0, urlimage: "" },
+            { nivel: 2, fila: 0, columna: 3, tipo: 'A', disponibilidad: 0, urlimage: "" },
+            { nivel: 2, fila: 0, columna: 4, tipo: 'A', disponibilidad: 0, urlimage: "" },
             { nivel: 2, fila: 1, columna: 0, tipo: 'A', disponibilidad: 1, urlimage: "" },
             { nivel: 2, fila: 1, columna: 1, tipo: 'A', disponibilidad: 1, urlimage: "" },
             { nivel: 2, fila: 1, columna: 3, tipo: 'A', disponibilidad: 1, urlimage: "" },
@@ -413,17 +413,29 @@ var BusComponent = /** @class */ (function () {
     BusComponent.prototype.ngOnInit = function () {
         // this.ponerImagen();
         this.ponerImagen2();
-        console.log(this.Asientos);
     };
     BusComponent.prototype.rabus = function (asiento, indice) {
-        this.Asientos_sel.push(asiento);
-        if (asiento.urlimage == "~/images/asiento4.png") {
-            this.Asientos[indice].urlimage = "~/images/asiento4_sel.png";
+        if (asiento.disponibilidad == 0) {
+            if (asiento.urlimage == "~/images/asiento4_sel.png") {
+                this.index = this.Asientos_sel.findIndex(function (x) { return x.columna == asiento.columna && x.fila == asiento.fila; });
+                this.Asientos_sel[this.index].remove;
+                this.Asientos[indice].urlimage = "~/images/asiento4.png";
+            }
+            else if (asiento.urlimage == "~/images/asiento_sel.png") {
+                this.index = this.Asientos_sel.findIndex(function (x) { return x.columna == asiento.columna && x.fila == asiento.fila; });
+                this.Asientos_sel[this.index].remove;
+                this.Asientos[indice].urlimage = "~/images/asiento.png";
+            }
+            else if (asiento.urlimage == "~/images/asiento4.png") {
+                this.Asientos_sel.push(asiento);
+                this.Asientos[indice].urlimage = "~/images/asiento4_sel.png";
+            }
+            else if (asiento.urlimage == "~/images/asiento.png") {
+                this.Asientos_sel.push(asiento);
+                this.Asientos[indice].urlimage = "~/images/asiento_sel.png";
+            }
+            console.log(this.Asientos_sel);
         }
-        else if (asiento.urlimage == "~/images/asiento.png") {
-            this.Asientos[indice].urlimage = "~/images/asiento_sel.png";
-        }
-        console.log(this.Asientos_sel);
     };
     BusComponent.prototype.obtenercol1 = function () {
         return this.columnaniv1;
@@ -448,20 +460,36 @@ var BusComponent = /** @class */ (function () {
     BusComponent.prototype.ponerImagen2 = function () {
         for (var i in this.Asientos) {
             if (this.obtenercol1() == 4 && this.Asientos[i].nivel == 1) {
-                this.Asientos[i].urlimage = "~/images/asiento4.png";
-                console.log("entra al nivel 1 - 4");
+                if (this.Asientos[i].disponibilidad == 0) {
+                    this.Asientos[i].urlimage = "~/images/asiento4.png";
+                }
+                else if (this.Asientos[i].disponibilidad == 1) {
+                    this.Asientos[i].urlimage = "~/images/asiento4_reservado.png";
+                }
             }
             else if (this.obtenercol1() == 5 && this.Asientos[i].nivel == 1) {
-                this.Asientos[i].urlimage = "~/images/asiento.png";
-                console.log("entra al nivel 1 - 5");
+                if (this.Asientos[i].disponibilidad == 0) {
+                    this.Asientos[i].urlimage = "~/images/asiento.png";
+                }
+                else if (this.Asientos[i].disponibilidad == 1) {
+                    this.Asientos[i].urlimage = "~/images/asiento_reservado.png";
+                }
             }
             if (this.obtenercol2() == 4 && this.Asientos[i].nivel == 2) {
-                this.Asientos[i].urlimage = "~/images/asiento4.png";
-                console.log("entra al nivel 2 - 4");
+                if (this.Asientos[i].disponibilidad == 0) {
+                    this.Asientos[i].urlimage = "~/images/asiento4.png";
+                }
+                else if (this.Asientos[i].disponibilidad == 1) {
+                    this.Asientos[i].urlimage = "~/images/asiento4_reservado.png";
+                }
             }
             else if (this.obtenercol2() == 5 && this.Asientos[i].nivel == 2) {
-                console.log("entra al nivel 2 - 5");
-                this.Asientos[i].urlimage = "~/images/asiento.png";
+                if (this.Asientos[i].disponibilidad == 0) {
+                    this.Asientos[i].urlimage = "~/images/asiento.png";
+                }
+                else if (this.Asientos[i].disponibilidad == 1) {
+                    this.Asientos[i].urlimage = "~/images/asiento5_reservado.png";
+                }
             }
         }
     };

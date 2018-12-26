@@ -321,7 +321,7 @@ var AppModule = /** @class */ (function () {
 /***/ "./app/bus/bus.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<Page xlmns=\"http://schemas.nativescript.org/tns.xsd\">\r\n        <ScrollView>\r\n                <GridLayout columns=\"auto\" rows=\"auto,auto\" backgroundColor=\"lightgray\">\r\n\r\n                        <GridLayout col=\"0\" row=\"0\" class=\"grid\" *ngIf=\"columnaniv1==4 \" verticalAlignment=\"top\"  columns=\"auto,auto,auto,auto\" rows=\"auto,auto,auto,auto\" backgroundColor=\"lightgray\" border=\"100\" border-color=\"blue\">\r\n                                <template *ngFor=\"let asiento of Asientos;let indice = index\">\r\n                                        <template *ngIf=\"asiento.nivel==1\">\r\n                                                <Image (tap)=\"rabus(asiento)\" [col]=\"asiento.columna\" [row]=\"asiento.fila\" src=\"urlasientoniv1\"  class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"75\" height=\"75\"></Image>\r\n                                                <Image [col]=\"2\" [row]=\"asiento.fila\" src=\"~/images/clg.png\"  class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"100\" height=\"100\"></Image>\r\n                                                <Image [col]=\"3\" [row]=\"asiento.fila\" src=\"~/images/clg.png\"  class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"100\" height=\"100\"></Image>\r\n                                        </template>              \r\n                                </template>\r\n                        </GridLayout>\r\n\r\n                        <GridLayout col=\"0\" row=\"0\" class=\"grid\" *ngIf=\"columnaniv1==5 \" verticalAlignment=\"top\"  columns=\"auto,auto,auto,auto,auto\" rows=\"auto,auto,auto,auto\" backgroundColor=\"lightgray\" border=\"100\" border-color=\"blue\">\r\n                                <template *ngFor=\"let asiento of Asientos;let indice = index\">\r\n                                        <template *ngIf=\"asiento.nivel==1\">\r\n                                                <Image (tap)=\"rabus(asiento)\" [col]=\"asiento.columna\" [row]=\"asiento.fila\" src=\"urlasientoniv1\"   class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"75\" height=\"75\"></Image>\r\n                                                <Image [col]=\"2\" [row]=\"asiento.fila\" src=\"~/images/clg.png\"  class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"75\" height=\"75\"></Image>\r\n                                                <Image [col]=\"3\" [row]=\"asiento.fila\" src=\"~/images/clg.png\"  class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"75\" height=\"75\"></Image>\r\n                                        </template>\r\n                                </template>\r\n                        </GridLayout>\r\n\r\n                        <GridLayout col=\"0\" row=\"1\" class=\"grid\" *ngIf=\"columnaniv2==4 \" verticalAlignment=\"top\"  columns=\"auto,auto,auto,auto\" rows=\"auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto\" backgroundColor=\"lightgray\" border=\"100\" border-color=\"blue\">\r\n                                <template *ngFor=\"let asiento of Asientos;let indice = index\">\r\n                                        <template *ngIf=\"asiento.nivel==2\">\r\n                                                <Image [col]=\"asiento.columna\"  [row]=\"asiento.fila\" src=\"urlasientoniv2\" class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"100\" height=\"100\"></Image>\r\n                                                <Image [col]=\"2\" [row]=\"asiento.fila\" src=\"~/images/clg.png\"  class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"75\" height=\"75\"></Image>\r\n                                        </template>\r\n                                </template>\r\n                        </GridLayout>  \r\n\r\n                        <GridLayout col=\"0\" row=\"1\" class=\"grid\" *ngIf=\"columnaniv2==5 \" verticalAlignment=\"top\"  columns=\"auto,auto,auto,auto,auto\" rows=\"auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto\" backgroundColor=\"lightgray\" border=\"100\" border-color=\"blue\">\r\n                                <template *ngFor=\"let asiento of Asientos;let indice = index\">\r\n                                        <template *ngIf=\"asiento.nivel==2\">\r\n                                                <Image [col]=\"asiento.columna\" [row]=\"asiento.fila\" src=\"urlasientoniv2\" class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"75\" height=\"75\"></Image>\r\n                                                <Image [col]=\"2\" [row]=\"asiento.fila\" src=\"~/images/clg.png\"  class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"75\" height=\"75\"></Image>\r\n                                        </template>     \r\n                                </template>\r\n                        </GridLayout> \r\n                </GridLayout>\r\n        </ScrollView>\r\n</Page>\r\n"
+module.exports = "<Page xlmns=\"http://schemas.nativescript.org/tns.xsd\">\r\n        <ScrollView>\r\n                <GridLayout columns=\"auto\" rows=\"auto,auto\" backgroundColor=\"lightgray\">\r\n\r\n                        <GridLayout col=\"0\" row=\"0\" class=\"grid\" *ngIf=\"columnaniv1==4 \" verticalAlignment=\"top\"  columns=\"auto,auto,auto,auto\" rows=\"auto,auto,auto,auto\" backgroundColor=\"lightgray\" border=\"100\" border-color=\"blue\">\r\n                                <template *ngFor=\"let asiento of Asientos;let indice = index\">\r\n                                        <template *ngIf=\"asiento.nivel==1\">\r\n                                                <Image (tap)=\"rabus(asiento,indice)\" [col]=\"asiento.columna\" [row]=\"asiento.fila\" [src]=\"asiento.urlimage\"  class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"100\" height=\"100\"></Image>\r\n                                                <Image [col]=\"2\" [row]=\"asiento.fila\" src=\"~/images/clg.png\"  class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"75\" height=\"75\"></Image>\r\n                                        </template>              \r\n                                </template>\r\n                        </GridLayout>\r\n\r\n                        <GridLayout col=\"0\" row=\"0\" class=\"grid\" *ngIf=\"columnaniv1==5\" verticalAlignment=\"top\"  columns=\"auto,auto,auto,auto,auto\" rows=\"auto,auto,auto,auto\" backgroundColor=\"lightgray\" border=\"100\" border-color=\"blue\">\r\n                                <template *ngFor=\"let asiento of Asientos;let indice = index\">\r\n                                        <template *ngIf=\"asiento.nivel==1\">\r\n                                                <Image (tap)=\"rabus(asiento,indice)\" [col]=\"asiento.columna\" [row]=\"asiento.fila\" [src]=\"asiento.urlimage\"   class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"75\" height=\"75\"></Image>\r\n                                                <Image [col]=\"2\" [row]=\"asiento.fila\" src=\"~/images/clg.png\"  class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"75\" height=\"75\"></Image>\r\n                                                <Image [col]=\"3\" [row]=\"asiento.fila\" src=\"~/images/clg.png\"  class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"75\" height=\"75\"></Image>\r\n                                        </template>\r\n                                </template>\r\n                        </GridLayout>\r\n\r\n                        <GridLayout col=\"0\" row=\"1\" class=\"grid\" *ngIf=\"columnaniv2==4\" verticalAlignment=\"top\"  columns=\"auto,auto,auto,auto\" rows=\"auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto\" backgroundColor=\"lightgray\" border=\"100\" border-color=\"blue\">\r\n                                <template *ngFor=\"let asiento of Asientos;let indice = index\">\r\n                                        <template *ngIf=\"asiento.nivel==2\">\r\n                                                <Image (tap)=\"rabus(asiento,indice)\" [col]=\"asiento.columna\"  [row]=\"asiento.fila\" [src]=\"asiento.urlimage\" class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"100\" height=\"100\"></Image>\r\n                                                <Image [col]=\"2\" [row]=\"asiento.fila\" src=\"~/images/clg.png\"  class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"75\" height=\"75\"></Image>\r\n                                        </template>\r\n                                </template>\r\n                        </GridLayout>  \r\n\r\n                        <GridLayout col=\"0\" row=\"1\" class=\"grid\" *ngIf=\"columnaniv2==5 \" verticalAlignment=\"top\"  columns=\"auto,auto,auto,auto,auto\" rows=\"auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto\" backgroundColor=\"lightgray\" border=\"100\" border-color=\"blue\">\r\n                                <template *ngFor=\"let asiento of Asientos;let indice = index\">\r\n                                        <template *ngIf=\"asiento.nivel==2\">\r\n                                                <Image (tap)=\"rabus(asiento,indice)\" [col]=\"asiento.columna\" [row]=\"asiento.fila\" [src]=\"asiento.urlimage\" class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"75\" height=\"75\"></Image>\r\n                                                <Image [col]=\"2\" [row]=\"asiento.fila\" src=\"~/images/clg.png\"  class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"75\" height=\"75\"></Image>\r\n                                        </template>     \r\n                                </template>\r\n                        </GridLayout> \r\n                </GridLayout>\r\n        </ScrollView>\r\n</Page>\r\n"
 
 /***/ }),
 
@@ -341,94 +341,99 @@ __webpack_require__.r(__webpack_exports__);
 var BusComponent = /** @class */ (function () {
     function BusComponent(router) {
         this.router = router;
-        this.columnaniv1 = 0;
-        this.columnaniv2 = 0;
+        this.columnaniv1 = 4;
+        this.columnaniv2 = 5;
         this.urlasientoniv2 = "";
         this.urlasientoniv1 = "";
         this.isSel = false;
         this.grid = new tns_core_modules_ui_layouts_grid_layout__WEBPACK_IMPORTED_MODULE_1__["GridLayout"];
-        this.Asientos = [{ nivel: 1, fila: 0, columna: 0, tipo: 'A', disponibilidad: 1, urlimg: "" },
-            { nivel: 1, fila: 0, columna: 1, tipo: 'A', disponibilidad: 1 },
-            { nivel: 1, fila: 0, columna: 4, tipo: 'A', disponibilidad: 1 },
-            { nivel: 1, fila: 1, columna: 0, tipo: 'A', disponibilidad: 1 },
-            { nivel: 1, fila: 1, columna: 1, tipo: 'A', disponibilidad: 1 },
-            { nivel: 1, fila: 1, columna: 4, tipo: 'A', disponibilidad: 1 },
-            { nivel: 1, fila: 2, columna: 0, tipo: 'A', disponibilidad: 1 },
-            { nivel: 1, fila: 2, columna: 1, tipo: 'A', disponibilidad: 1 },
-            { nivel: 1, fila: 2, columna: 4, tipo: 'A', disponibilidad: 1 },
-            { nivel: 1, fila: 3, columna: 0, tipo: 'A', disponibilidad: 1 },
-            { nivel: 1, fila: 3, columna: 1, tipo: 'A', disponibilidad: 1 },
-            { nivel: 1, fila: 3, columna: 4, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 0, columna: 0, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 0, columna: 1, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 0, columna: 3, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 0, columna: 4, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 1, columna: 0, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 1, columna: 1, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 1, columna: 3, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 1, columna: 4, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 2, columna: 0, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 2, columna: 1, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 2, columna: 3, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 2, columna: 4, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 3, columna: 0, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 3, columna: 1, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 3, columna: 3, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 3, columna: 4, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 4, columna: 0, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 4, columna: 1, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 4, columna: 3, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 4, columna: 4, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 5, columna: 0, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 5, columna: 1, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 5, columna: 3, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 5, columna: 4, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 6, columna: 0, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 6, columna: 1, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 6, columna: 3, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 6, columna: 4, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 7, columna: 0, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 7, columna: 1, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 7, columna: 3, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 7, columna: 4, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 8, columna: 0, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 8, columna: 1, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 8, columna: 3, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 8, columna: 4, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 9, columna: 0, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 9, columna: 1, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 9, columna: 3, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 9, columna: 4, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 10, columna: 0, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 10, columna: 1, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 10, columna: 3, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 10, columna: 4, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 11, columna: 0, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 11, columna: 1, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 11, columna: 3, tipo: 'A', disponibilidad: 1 },
-            { nivel: 2, fila: 11, columna: 4, tipo: 'A', disponibilidad: 1 },
+        this.Asientos = [{ nivel: 1, fila: 0, columna: 0, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 1, fila: 0, columna: 1, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 1, fila: 0, columna: 4, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 1, fila: 1, columna: 0, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 1, fila: 1, columna: 1, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 1, fila: 1, columna: 4, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 1, fila: 2, columna: 0, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 1, fila: 2, columna: 1, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 1, fila: 2, columna: 4, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 1, fila: 3, columna: 0, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 1, fila: 3, columna: 1, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 1, fila: 3, columna: 4, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 0, columna: 0, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 0, columna: 1, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 0, columna: 3, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 0, columna: 4, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 1, columna: 0, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 1, columna: 1, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 1, columna: 3, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 1, columna: 4, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 2, columna: 0, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 2, columna: 1, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 2, columna: 3, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 2, columna: 4, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 3, columna: 0, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 3, columna: 1, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 3, columna: 3, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 3, columna: 4, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 4, columna: 0, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 4, columna: 1, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 4, columna: 3, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 4, columna: 4, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 5, columna: 0, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 5, columna: 1, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 5, columna: 3, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 5, columna: 4, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 6, columna: 0, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 6, columna: 1, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 6, columna: 3, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 6, columna: 4, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 7, columna: 0, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 7, columna: 1, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 7, columna: 3, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 7, columna: 4, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 8, columna: 0, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 8, columna: 1, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 8, columna: 3, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 8, columna: 4, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 9, columna: 0, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 9, columna: 1, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 9, columna: 3, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 9, columna: 4, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 10, columna: 0, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 10, columna: 1, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 10, columna: 3, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 10, columna: 4, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 11, columna: 0, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 11, columna: 1, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 11, columna: 3, tipo: 'A', disponibilidad: 1, urlimage: "" },
+            { nivel: 2, fila: 11, columna: 4, tipo: 'A', disponibilidad: 1, urlimage: "" },
         ];
         this.Asientos_sel = [];
     }
     BusComponent.prototype.ngOnInit = function () {
-        this.obtenercol1();
-        this.obtenercol2();
+        // this.ponerImagen();
+        this.ponerImagen2();
         console.log(this.Asientos);
     };
-    BusComponent.prototype.rabus = function (asiento) {
+    BusComponent.prototype.rabus = function (asiento, indice) {
+        var _this = this;
         this.Asientos_sel.push(asiento);
-        this.cambiarImagen(asiento);
+        if (this.Asientos_sel.filter(function (x) { return x.fila == _this.Asientos[indice].fila && x.columna == _this.Asientos[indice]; })) {
+            console.log("entro");
+        }
+        else if (asiento.urlimage == "~/images/asiento4.png") {
+            this.Asientos[indice].urlimage = "~/images/asiento4_sel.png";
+        }
+        else if (asiento.urlimage == "~/images/asiento.png") {
+            this.Asientos[indice].urlimage = "~/images/asiento_sel.png";
+        }
         console.log(this.Asientos_sel);
     };
-    BusComponent.prototype.cambiarImagen = function (asiento) {
-        if (asiento.nivel == 1) {
-        }
-    };
     BusComponent.prototype.obtenercol1 = function () {
-        this.columnaniv1 = 5;
+        return this.columnaniv1;
     };
     BusComponent.prototype.obtenercol2 = function () {
-        this.columnaniv2 = 4;
+        return this.columnaniv2;
     };
     BusComponent.prototype.ponerImagen = function () {
         if (this.columnaniv1 == 4) {
@@ -442,6 +447,26 @@ var BusComponent = /** @class */ (function () {
         }
         else if (this.columnaniv2 == 5) {
             this.urlasientoniv2 = "~/images/asiento.png";
+        }
+    };
+    BusComponent.prototype.ponerImagen2 = function () {
+        for (var i in this.Asientos) {
+            if (this.obtenercol1() == 4 && this.Asientos[i].nivel == 1) {
+                this.Asientos[i].urlimage = "~/images/asiento4.png";
+                console.log("entra al nivel 1 - 4");
+            }
+            else if (this.obtenercol1() == 5 && this.Asientos[i].nivel == 1) {
+                this.Asientos[i].urlimage = "~/images/asiento.png";
+                console.log("entra al nivel 1 - 5");
+            }
+            if (this.obtenercol2() == 4 && this.Asientos[i].nivel == 2) {
+                this.Asientos[i].urlimage = "~/images/asiento4.png";
+                console.log("entra al nivel 2 - 4");
+            }
+            else if (this.obtenercol2() == 5 && this.Asientos[i].nivel == 2) {
+                console.log("entra al nivel 2 - 5");
+                this.Asientos[i].urlimage = "~/images/asiento.png";
+            }
         }
     };
     BusComponent = __decorate([
