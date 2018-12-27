@@ -185,6 +185,43 @@ exports.push([module.i, "/*\nIn NativeScript, the app.css file is where you plac
 
 /***/ }),
 
+/***/ "./app/CarritoCompra/CarritoCompra.component.html":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./app/CarritoCompra/CarritoCompra.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CarritoCompraComponent", function() { return CarritoCompraComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("../node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("../node_modules/@angular/router/fesm5/router.js");
+
+
+var CarritoCompraComponent = /** @class */ (function () {
+    function CarritoCompraComponent(router) {
+        this.router = router;
+    }
+    CarritoCompraComponent.prototype.ngOnInit = function () {
+    };
+    CarritoCompraComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: "ns-details",
+            template: __webpack_require__("./app/CarritoCompra/CarritoCompra.component.html")
+        }),
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+    ], CarritoCompraComponent);
+    return CarritoCompraComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./app/app-routing.module.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -265,11 +302,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("../node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var nativescript_angular_nativescript_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("../node_modules/nativescript-angular/nativescript.module.js");
 /* harmony import */ var nativescript_angular_nativescript_module__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(nativescript_angular_nativescript_module__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("./app/app-routing.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("./app/app.component.ts");
-/* harmony import */ var _item_items_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__("./app/item/items.component.ts");
-/* harmony import */ var _item_item_detail_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__("./app/item/item-detail.component.ts");
-/* harmony import */ var _bus_bus_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__("./app/bus/bus.component.ts");
+/* harmony import */ var _CarritoCompra_CarritoCompra_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("./app/CarritoCompra/CarritoCompra.component.ts");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("./app/app-routing.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__("./app/app.component.ts");
+/* harmony import */ var _item_items_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__("./app/item/items.component.ts");
+/* harmony import */ var _item_item_detail_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__("./app/item/item-detail.component.ts");
+/* harmony import */ var _bus_bus_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__("./app/bus/bus.component.ts");
+
 
 
 
@@ -290,17 +329,18 @@ var AppModule = /** @class */ (function () {
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
             bootstrap: [
-                _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]
             ],
             imports: [
                 nativescript_angular_nativescript_module__WEBPACK_IMPORTED_MODULE_1__["NativeScriptModule"],
-                _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"]
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"]
             ],
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
-                _item_items_component__WEBPACK_IMPORTED_MODULE_4__["ItemsComponent"],
-                _item_item_detail_component__WEBPACK_IMPORTED_MODULE_5__["ItemDetailComponent"],
-                _bus_bus_component__WEBPACK_IMPORTED_MODULE_6__["BusComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
+                _item_items_component__WEBPACK_IMPORTED_MODULE_5__["ItemsComponent"],
+                _item_item_detail_component__WEBPACK_IMPORTED_MODULE_6__["ItemDetailComponent"],
+                _bus_bus_component__WEBPACK_IMPORTED_MODULE_7__["BusComponent"],
+                _CarritoCompra_CarritoCompra_component__WEBPACK_IMPORTED_MODULE_2__["CarritoCompraComponent"]
             ],
             providers: [],
             schemas: [
@@ -321,7 +361,7 @@ var AppModule = /** @class */ (function () {
 /***/ "./app/bus/bus.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<Page xlmns=\"http://schemas.nativescript.org/tns.xsd\">\r\n        <ScrollView>\r\n                <GridLayout columns=\"auto\" rows=\"auto,auto\" backgroundColor=\"lightgray\">\r\n\r\n                        <GridLayout col=\"0\" row=\"0\" class=\"grid\" *ngIf=\"columnaniv1==4 \" verticalAlignment=\"top\"  columns=\"auto,auto,auto,auto\" rows=\"auto,auto,auto,auto\" backgroundColor=\"lightgray\" border=\"100\" border-color=\"blue\">\r\n                                <template *ngFor=\"let asiento of Asientos;let indice = index\">\r\n                                        <template *ngIf=\"asiento.nivel==1\">\r\n                                                <Image (tap)=\"rabus(asiento,indice)\" [col]=\"asiento.columna\" [row]=\"asiento.fila\" [src]=\"asiento.urlimage\"  class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"100\" height=\"100\"></Image>\r\n                                                <Image [col]=\"2\" [row]=\"asiento.fila\" src=\"~/images/clg.png\"  class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"75\" height=\"75\"></Image>\r\n                                        </template>              \r\n                                </template>\r\n                        </GridLayout>\r\n\r\n                        <GridLayout col=\"0\" row=\"0\" class=\"grid\" *ngIf=\"columnaniv1==5\" verticalAlignment=\"top\"  columns=\"auto,auto,auto,auto,auto\" rows=\"auto,auto,auto,auto\" backgroundColor=\"lightgray\" border=\"100\" border-color=\"blue\">\r\n                                <template *ngFor=\"let asiento of Asientos;let indice = index\">\r\n                                        <template *ngIf=\"asiento.nivel==1\">\r\n                                                <Image (tap)=\"rabus(asiento,indice)\" [col]=\"asiento.columna\" [row]=\"asiento.fila\" [src]=\"asiento.urlimage\"   class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"75\" height=\"75\"></Image>\r\n                                                <Image [col]=\"2\" [row]=\"asiento.fila\" src=\"~/images/clg.png\"  class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"75\" height=\"75\"></Image>\r\n                                                <Image [col]=\"3\" [row]=\"asiento.fila\" src=\"~/images/clg.png\"  class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"75\" height=\"75\"></Image>\r\n                                        </template>\r\n                                </template>\r\n                        </GridLayout>\r\n\r\n                        <GridLayout col=\"0\" row=\"1\" class=\"grid\" *ngIf=\"columnaniv2==4\" verticalAlignment=\"top\"  columns=\"auto,auto,auto,auto\" rows=\"auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto\" backgroundColor=\"lightgray\" border=\"100\" border-color=\"blue\">\r\n                                <template *ngFor=\"let asiento of Asientos;let indice = index\">\r\n                                        <template *ngIf=\"asiento.nivel==2\">\r\n                                                <Image (tap)=\"rabus(asiento,indice)\" [col]=\"asiento.columna\"  [row]=\"asiento.fila\" [src]=\"asiento.urlimage\" class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"100\" height=\"100\"></Image>\r\n                                                <Image [col]=\"2\" [row]=\"asiento.fila\" src=\"~/images/clg.png\"  class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"75\" height=\"75\"></Image>\r\n                                        </template>\r\n                                </template>\r\n                        </GridLayout>  \r\n\r\n                        <GridLayout col=\"0\" row=\"1\" class=\"grid\" *ngIf=\"columnaniv2==5 \" verticalAlignment=\"top\"  columns=\"auto,auto,auto,auto,auto\" rows=\"auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto\" backgroundColor=\"lightgray\" border=\"100\" border-color=\"blue\">\r\n                                <template *ngFor=\"let asiento of Asientos;let indice = index\">\r\n                                        <template *ngIf=\"asiento.nivel==2\">\r\n                                                <Image (tap)=\"rabus(asiento,indice)\" [col]=\"asiento.columna\" [row]=\"asiento.fila\" [src]=\"asiento.urlimage\" class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"75\" height=\"75\"></Image>\r\n                                                <Image [col]=\"2\" [row]=\"asiento.fila\" src=\"~/images/clg.png\"  class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"75\" height=\"75\"></Image>\r\n                                        </template>     \r\n                                </template>\r\n                        </GridLayout> \r\n                </GridLayout>\r\n        </ScrollView>\r\n</Page>\r\n"
+module.exports = "<Page xlmns=\"http://schemas.nativescript.org/tns.xsd\">\r\n        <ScrollView>\r\n                <GridLayout  columns=\"*\" rows=\"auto,auto,auto\"   width=\"100%\"  backgroundColor=\"lightgray\">\r\n\r\n                        <GridLayout col=\"0\" row=\"0\" class=\"grid\"   *ngIf=\"columnaniv1==4 \" verticalAlignment=\"top\"  columns=\"auto,auto,auto,auto\" rows=\"auto,auto,auto,auto\" backgroundColor=\"lightgray\" border=\"100\" border-color=\"blue\">\r\n                                <template *ngFor=\"let asiento of Asientos;let indice = index\">\r\n                                        <template *ngIf=\"asiento.nivel==1\">\r\n                                                <Image class=\"Img\" (tap)=\"rabus(asiento,indice)\" [col]=\"asiento.columna\" [row]=\"asiento.fila\" [src]=\"asiento.urlimage\"  class=\"img-rounded p-l-15 p-r-15 p-t-15\" [width]=\"anchoImagenniv1\" [height]=\"altoImagenniv1\" ></Image>\r\n                                                <Image [col]=\"2\" [row]=\"asiento.fila\" src=\"~/images/clg.png\"  class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"40\" height=\"40\"></Image>\r\n                                        </template>              \r\n                                </template>\r\n                        </GridLayout>\r\n\r\n                        <GridLayout col=\"0\" row=\"0\" class=\"grid\"    *ngIf=\"columnaniv1==5\" verticalAlignment=\"top\"  columns=\"auto,auto,auto,auto,auto\" rows=\"auto,auto,auto,auto\" backgroundColor=\"lightgray\" border=\"100\" border-color=\"blue\">\r\n                                <template *ngFor=\"let asiento of Asientos;let indice = index\">\r\n                                        <template *ngIf=\"asiento.nivel==1\">\r\n                                                <Image class=\"Img\" (tap)=\"rabus(asiento,indice)\" [col]=\"asiento.columna\" [row]=\"asiento.fila\" [src]=\"asiento.urlimage\"   class=\"img-rounded p-l-15 p-r-15 p-t-15\"   [width]=\"anchoImagenniv1\" [height]=\"altoImagenniv1\" ></Image>\r\n                                                <Image [col]=\"2\" [row]=\"asiento.fila\" src=\"~/images/clg.png\"  class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"40\" height=\"40\" ></Image>\r\n                                                <Image [col]=\"3\" [row]=\"asiento.fila\" src=\"~/images/clg.png\"  class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"40\" height=\"40\"></Image>\r\n                                        </template>\r\n                                </template>\r\n                        </GridLayout>\r\n\r\n                        <GridLayout col=\"0\" row=\"1\" class=\"grid\"   *ngIf=\"columnaniv2==4\" verticalAlignment=\"top\"  columns=\"auto,auto,auto,auto\" rows=\"auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto\" backgroundColor=\"lightgray\" border=\"100\" border-color=\"blue\">\r\n                                <template *ngFor=\"let asiento of Asientos;let indice = index\">\r\n                                        <template *ngIf=\"asiento.nivel==2\">\r\n                                                <Image class=\"Img\" (tap)=\"rabus(asiento,indice)\" [col]=\"asiento.columna\"  [row]=\"asiento.fila\" [src]=\"asiento.urlimage\" class=\"img-rounded p-l-15 p-r-15 p-t-15\" [width]=\"anchoImagenniv2\" [height]=\"altoImagenniv2\" ></Image>\r\n                                                <Image [col]=\"2\" [row]=\"asiento.fila\" src=\"~/images/clg.png\"  class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"40\" height=\"40\" ></Image>\r\n                                        </template>\r\n                                </template>\r\n                        </GridLayout>  \r\n\r\n                        <GridLayout col=\"0\" row=\"1\" class=\"grid\"   *ngIf=\"columnaniv2==5 \" verticalAlignment=\"top\"  columns=\"auto,auto,auto,auto,auto\" rows=\"auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto\" backgroundColor=\"lightgray\" border=\"100\" border-color=\"blue\">\r\n                                <template *ngFor=\"let asiento of Asientos;let indice = index\">\r\n                                        <template *ngIf=\"asiento.nivel==2\">\r\n                                                <Image class=\"Img\" (tap)=\"rabus(asiento,indice)\" [col]=\"asiento.columna\" [row]=\"asiento.fila\" [src]=\"asiento.urlimage\" class=\"img-rounded p-l-15 p-r-15 p-t-15\" [width]=\"anchoImagenniv2\" [height]=\"altoImagenniv2\" ></Image>\r\n                                                <Image [col]=\"2\" [row]=\"asiento.fila\" src=\"~/images/clg.png\"  class=\"img-rounded p-l-15 p-r-15 p-t-15\" width=\"20\" height=\"20\"></Image>\r\n                                        </template>     \r\n                                </template>\r\n                        </GridLayout> \r\n\r\n                        <Button col=\"0\" row=\"2\" text=\"Log In\" class=\"btn btn-primary\" ></Button>\r\n\r\n                </GridLayout>\r\n        </ScrollView>\r\n                        \r\n</Page>\r\n"
 
 /***/ }),
 
@@ -332,9 +372,9 @@ module.exports = "<Page xlmns=\"http://schemas.nativescript.org/tns.xsd\">\r\n  
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BusComponent", function() { return BusComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("../node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var tns_core_modules_ui_layouts_grid_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("../node_modules/tns-core-modules/ui/layouts/grid-layout/grid-layout.js");
-/* harmony import */ var tns_core_modules_ui_layouts_grid_layout__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(tns_core_modules_ui_layouts_grid_layout__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("../node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("../node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var tns_core_modules_platform_platform__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("../node_modules/tns-core-modules/platform/platform.js");
+/* harmony import */ var tns_core_modules_platform_platform__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(tns_core_modules_platform_platform__WEBPACK_IMPORTED_MODULE_2__);
 
 
 
@@ -345,8 +385,6 @@ var BusComponent = /** @class */ (function () {
         this.columnaniv2 = 5;
         this.urlasientoniv2 = "";
         this.urlasientoniv1 = "";
-        this.isSel = false;
-        this.grid = new tns_core_modules_ui_layouts_grid_layout__WEBPACK_IMPORTED_MODULE_1__["GridLayout"];
         this.Asientos = [{ nivel: 1, fila: 0, columna: 0, tipo: 'A', disponibilidad: 1, urlimage: "" },
             { nivel: 1, fila: 0, columna: 1, tipo: 'A', disponibilidad: 0, urlimage: "" },
             { nivel: 1, fila: 0, columna: 4, tipo: 'A', disponibilidad: 0, urlimage: "" },
@@ -411,7 +449,12 @@ var BusComponent = /** @class */ (function () {
         this.Asientos_sel = [];
     }
     BusComponent.prototype.ngOnInit = function () {
-        // this.ponerImagen();
+        this.anchoPantalla = tns_core_modules_platform_platform__WEBPACK_IMPORTED_MODULE_2__["screen"].mainScreen.widthDIPs;
+        if (320 >= tns_core_modules_platform_platform__WEBPACK_IMPORTED_MODULE_2__["screen"].mainScreen.widthDIPs) {
+        }
+        else if (320 < tns_core_modules_platform_platform__WEBPACK_IMPORTED_MODULE_2__["screen"].mainScreen.widthDIPs) {
+        }
+        console.log(tns_core_modules_platform_platform__WEBPACK_IMPORTED_MODULE_2__["screen"].mainScreen.heightDIPs);
         this.ponerImagen2();
     };
     BusComponent.prototype.rabus = function (asiento, indice) {
@@ -443,23 +486,17 @@ var BusComponent = /** @class */ (function () {
     BusComponent.prototype.obtenercol2 = function () {
         return this.columnaniv2;
     };
-    BusComponent.prototype.ponerImagen = function () {
-        if (this.columnaniv1 == 4) {
-            this.urlasientoniv1 = "~/images/asiento4.png";
-        }
-        else if (this.columnaniv1 == 5) {
-            this.urlasientoniv1 = "~/images/asiento.png";
-        }
-        if (this.columnaniv2 == 4) {
-            this.urlasientoniv2 = "~/images/asiento4.png";
-        }
-        else if (this.columnaniv2 == 5) {
-            this.urlasientoniv2 = "~/images/asiento.png";
-        }
-    };
     BusComponent.prototype.ponerImagen2 = function () {
         for (var i in this.Asientos) {
             if (this.obtenercol1() == 4 && this.Asientos[i].nivel == 1) {
+                if (320 >= tns_core_modules_platform_platform__WEBPACK_IMPORTED_MODULE_2__["screen"].mainScreen.widthDIPs) {
+                    this.altoImagenniv1 = 60;
+                    this.anchoImagenniv1 = 60;
+                }
+                else if (320 < tns_core_modules_platform_platform__WEBPACK_IMPORTED_MODULE_2__["screen"].mainScreen.widthDIPs) {
+                    this.altoImagenniv1 = 80;
+                    this.anchoImagenniv1 = 80;
+                }
                 if (this.Asientos[i].disponibilidad == 0) {
                     this.Asientos[i].urlimage = "~/images/asiento4.png";
                 }
@@ -468,6 +505,14 @@ var BusComponent = /** @class */ (function () {
                 }
             }
             else if (this.obtenercol1() == 5 && this.Asientos[i].nivel == 1) {
+                if (320 >= tns_core_modules_platform_platform__WEBPACK_IMPORTED_MODULE_2__["screen"].mainScreen.widthDIPs) {
+                    this.altoImagenniv1 = 60;
+                    this.anchoImagenniv1 = 60;
+                }
+                else if (320 < tns_core_modules_platform_platform__WEBPACK_IMPORTED_MODULE_2__["screen"].mainScreen.widthDIPs) {
+                    this.altoImagenniv1 = 60;
+                    this.anchoImagenniv1 = 60;
+                }
                 if (this.Asientos[i].disponibilidad == 0) {
                     this.Asientos[i].urlimage = "~/images/asiento.png";
                 }
@@ -476,6 +521,14 @@ var BusComponent = /** @class */ (function () {
                 }
             }
             if (this.obtenercol2() == 4 && this.Asientos[i].nivel == 2) {
+                if (320 >= tns_core_modules_platform_platform__WEBPACK_IMPORTED_MODULE_2__["screen"].mainScreen.widthDIPs) {
+                    this.altoImagenniv2 = 60;
+                    this.anchoImagenniv2 = 60;
+                }
+                else if (320 < tns_core_modules_platform_platform__WEBPACK_IMPORTED_MODULE_2__["screen"].mainScreen.widthDIPs) {
+                    this.altoImagenniv2 = 75;
+                    this.anchoImagenniv2 = 75;
+                }
                 if (this.Asientos[i].disponibilidad == 0) {
                     this.Asientos[i].urlimage = "~/images/asiento4.png";
                 }
@@ -484,6 +537,14 @@ var BusComponent = /** @class */ (function () {
                 }
             }
             else if (this.obtenercol2() == 5 && this.Asientos[i].nivel == 2) {
+                if (320 >= tns_core_modules_platform_platform__WEBPACK_IMPORTED_MODULE_2__["screen"].mainScreen.widthDIPs) {
+                    this.altoImagenniv2 = 50;
+                    this.anchoImagenniv2 = 50;
+                }
+                else if (320 < tns_core_modules_platform_platform__WEBPACK_IMPORTED_MODULE_2__["screen"].mainScreen.widthDIPs) {
+                    this.altoImagenniv2 = 65;
+                    this.anchoImagenniv2 = 65;
+                }
                 if (this.Asientos[i].disponibilidad == 0) {
                     this.Asientos[i].urlimage = "~/images/asiento.png";
                 }
@@ -493,13 +554,16 @@ var BusComponent = /** @class */ (function () {
             }
         }
     };
+    BusComponent.prototype.iraCarritoCompra = function () {
+        this.router.navigate(['/CarritoCompra', this.Asientos_sel]);
+    };
     BusComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: "ns-details",
             template: __webpack_require__("./app/bus/bus.component.html"),
             styles: [__webpack_require__("./app/bus/bus.css")]
         }),
-        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
     ], BusComponent);
     return BusComponent;
 }());
@@ -511,7 +575,7 @@ var BusComponent = /** @class */ (function () {
 /***/ "./app/bus/bus.css":
 /***/ (function(module, exports) {
 
-module.exports = ".grid{\r\n    border-color: blue;\r\n    border-width: 3px;\r\n    margin:45px;\r\n}\r\n.img{\r\n    margin-left:200px;\r\n}"
+module.exports = ".grid{\r\n    border-color: blue;\r\n    border-width: 3px;\r\n    margin:15%;\r\n    margin-top:10px;\r\n    width:70%;\r\n}\r\n"
 
 /***/ }),
 

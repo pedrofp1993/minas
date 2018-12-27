@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { asiento } from "~/app/bus/Asiento";
 import { GridLayout } from "tns-core-modules/ui/layouts/grid-layout";
 import { Router } from "@angular/router";
+import {screen} from 'tns-core-modules/platform/platform';
+import { Observable } from "rxjs";
 @Component({
     selector: "ns-details",
     moduleId: module.id,
@@ -13,10 +15,15 @@ export class BusComponent implements OnInit {
     columnaniv2:number = 5;
     urlasientoniv2:String = "";
     urlasientoniv1:String = "";
-    isSel:boolean = false;
-    grid = new GridLayout;
-    algo:string;
     index:number;
+    anchoPantalla:number;
+    
+    altoImagenniv1:number;
+    anchoImagenniv1:number;
+
+    altoImagenniv2:number;
+    anchoImagenniv2:number;
+
     private Asientos:asiento[]=[        {nivel:  1, fila: 0,columna: 0,tipo: 'A',disponibilidad:1,urlimage:""},
                                         {nivel:  1, fila: 0,columna: 1,tipo: 'A',disponibilidad:0,urlimage:""},
                                         {nivel:  1, fila: 0,columna: 4,tipo: 'A',disponibilidad:0,urlimage:""},
@@ -100,7 +107,14 @@ export class BusComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
-       // this.ponerImagen();
+       
+       this.anchoPantalla = screen.mainScreen.widthDIPs;
+       if(320 >= screen.mainScreen.widthDIPs){
+            
+       } else if( 320 < screen.mainScreen.widthDIPs){
+
+       }
+       console.log(screen.mainScreen.heightDIPs);
        this.ponerImagen2();
     }
 
@@ -147,37 +161,40 @@ export class BusComponent implements OnInit {
         return this.columnaniv2;
     }
 
-    ponerImagen(){
-        if(this.columnaniv1 == 4){
-          this.urlasientoniv1 = "~/images/asiento4.png";
-        } else if(this.columnaniv1 == 5){
-            this.urlasientoniv1 = "~/images/asiento.png";
-        }
-
-        if(this.columnaniv2 == 4){
-            this.urlasientoniv2 = "~/images/asiento4.png";
-        } else if(this.columnaniv2 == 5){
-            this.urlasientoniv2 = "~/images/asiento.png";
-        }
-        
-    }
     ponerImagen2(){
         for(let i in this.Asientos){
             if(this.obtenercol1() == 4 && this.Asientos[i].nivel == 1){
               
-              if(this.Asientos[i].disponibilidad == 0)
-              {
-                this.Asientos[i].urlimage = "~/images/asiento4.png";
+                if(320 >= screen.mainScreen.widthDIPs){
+                    this.altoImagenniv1 = 60;
+                    this.anchoImagenniv1 = 60;
+                } else if(320 < screen.mainScreen.widthDIPs){
+                    this.altoImagenniv1 = 80;
+                    this.anchoImagenniv1 = 80;
+                }
                 
-              } else if(this.Asientos[i].disponibilidad == 1)
-              {
-                this.Asientos[i].urlimage = "~/images/asiento4_reservado.png";
-              }
+                if(this.Asientos[i].disponibilidad == 0)
+                {
+                    this.Asientos[i].urlimage = "~/images/asiento4.png";
+                
+                } else if(this.Asientos[i].disponibilidad == 1)
+                { 
+                    this.Asientos[i].urlimage = "~/images/asiento4_reservado.png";
+                }
 
-            } else if(this.obtenercol1() == 5 && this.Asientos[i].nivel == 1){
+            } else if(this.obtenercol1() == 5 && this.Asientos[i].nivel == 1  ){
                 
+                if(320 >= screen.mainScreen.widthDIPs){
+                    this.altoImagenniv1 = 60;
+                    this.anchoImagenniv1 = 60;
+                } else if(320 < screen.mainScreen.widthDIPs){
+                    this.altoImagenniv1 = 60;
+                    this.anchoImagenniv1 = 60;
+                }
+
               if(this.Asientos[i].disponibilidad == 0)
               {
+                  
                   this.Asientos[i].urlimage  = "~/images/asiento.png";
                 
               } else if(this.Asientos[i].disponibilidad == 1)
@@ -187,17 +204,30 @@ export class BusComponent implements OnInit {
 
             }
 
-            if(this.obtenercol2() == 4 && this.Asientos[i].nivel == 2){
-                  if(this.Asientos[i].disponibilidad == 0)
-                  {
-                    this.Asientos[i].urlimage = "~/images/asiento4.png";
-                    
-                  } else if(this.Asientos[i].disponibilidad == 1)
-                  {
-                    this.Asientos[i].urlimage = "~/images/asiento4_reservado.png";
-                  }
-            } else if(this.obtenercol2() == 5 && this.Asientos[i].nivel == 2){
-                
+            if(this.obtenercol2() == 4 && this.Asientos[i].nivel == 2){ 
+                    if(320 >= screen.mainScreen.widthDIPs){
+                        this.altoImagenniv2 = 60;
+                        this.anchoImagenniv2 = 60;
+                    } else if(320 < screen.mainScreen.widthDIPs){
+                        this.altoImagenniv2 = 75;
+                        this.anchoImagenniv2 = 75;
+                    }
+                    if(this.Asientos[i].disponibilidad == 0)
+                    {
+                        this.Asientos[i].urlimage = "~/images/asiento4.png";
+                        
+                    } else if(this.Asientos[i].disponibilidad == 1)
+                    {
+                        this.Asientos[i].urlimage = "~/images/asiento4_reservado.png";
+                    }
+            } else if(this.obtenercol2() == 5 && this.Asientos[i].nivel == 2 ){
+                if(320 >= screen.mainScreen.widthDIPs){
+                    this.altoImagenniv2 = 50;
+                    this.anchoImagenniv2 = 50;
+                } else if(320 < screen.mainScreen.widthDIPs){
+                    this.altoImagenniv2 = 65;
+                    this.anchoImagenniv2 = 65;
+                }
                   if(this.Asientos[i].disponibilidad == 0)
                   {
                       this.Asientos[i].urlimage  = "~/images/asiento.png";
@@ -209,6 +239,9 @@ export class BusComponent implements OnInit {
             }
         }
     }
-
+    
+    iraCarritoCompra(){
+        this.router.navigate(['/CarritoCompra',this.Asientos_sel]);
+    }
     
 }
