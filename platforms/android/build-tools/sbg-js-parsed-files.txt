@@ -1,0 +1,4 @@
+C:\Users\psistemas\Documents\proyectominas\platforms\android\app\src\main\assets\app\bundle.js
+C:\Users\psistemas\Documents\proyectominas\platforms\android\app\src\main\assets\app\starter.js
+C:\Users\psistemas\Documents\proyectominas\platforms\android\app\src\main\assets\app\tns-java-classes.js
+C:\Users\psistemas\Documents\proyectominas\platforms\android\app\src\main\assets\app\vendor.js
