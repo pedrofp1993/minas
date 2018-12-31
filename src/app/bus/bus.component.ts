@@ -3,7 +3,11 @@ import { asiento } from "~/app/bus/Asiento";
 import { GridLayout } from "tns-core-modules/ui/layouts/grid-layout";
 import { Router } from "@angular/router";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import {isAndroid, isIOS,screen,device } from 'tns-core-modules/platform/platform';
+=======
+import {screen} from 'tns-core-modules/platform/platform';
+>>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
 =======
 import {screen} from 'tns-core-modules/platform/platform';
 >>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
@@ -22,7 +26,11 @@ export class BusComponent implements OnInit {
     index:number;
     anchoPantalla:number;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
 =======
     
 >>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
@@ -33,8 +41,11 @@ export class BusComponent implements OnInit {
     anchoImagenniv2:number;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     isIOS:boolean;
 
+=======
+>>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
 =======
 >>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
     private Asientos:asiento[]=[        {nivel:  1, fila: 0,columna: 0,tipo: 'A',disponibilidad:1,urlimage:""},
@@ -53,7 +64,11 @@ export class BusComponent implements OnInit {
                                         {nivel:  1, fila: 3,columna: 1,tipo: 'A',disponibilidad:0,urlimage:""},
                                         {nivel:  1, fila: 3,columna: 4,tipo: 'A',disponibilidad:0,urlimage:""},
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+                                        
+>>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
 =======
                                         
 >>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
@@ -112,7 +127,11 @@ export class BusComponent implements OnInit {
                                         {nivel:  2, fila: 10,columna: 3,tipo: 'A',disponibilidad:1,urlimage:""},
                                         {nivel:  2, fila: 10,columna: 4,tipo: 'A',disponibilidad:1,urlimage:""},
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+                                       
+>>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
 =======
                                        
 >>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
@@ -120,6 +139,7 @@ export class BusComponent implements OnInit {
                                         {nivel:  2, fila: 11,columna: 1,tipo: 'A',disponibilidad:1,urlimage:""},
                                         {nivel:  2, fila: 11,columna: 3,tipo: 'A',disponibilidad:1,urlimage:""},
                                         {nivel:  2, fila: 11,columna: 4,tipo: 'A',disponibilidad:1,urlimage:""},
+<<<<<<< HEAD
 <<<<<<< HEAD
 
                                         ];
@@ -134,6 +154,8 @@ export class BusComponent implements OnInit {
        this.isIOS = isIOS;
        console.log(this.anchoPantalla);
 =======
+=======
+>>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
                                        
                                         ];
     private Asientos_sel = [];
@@ -150,6 +172,9 @@ export class BusComponent implements OnInit {
 
        }
        console.log(screen.mainScreen.heightDIPs);
+<<<<<<< HEAD
+>>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
+=======
 >>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
        this.ponerImagen2();
     }
@@ -159,6 +184,7 @@ export class BusComponent implements OnInit {
             if(asiento.urlimage == "~/images/asiento4_sel.png")
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
                 this.index = this.Asientos_sel.findIndex(x => x.columna == asiento.columna && x.fila == asiento.fila);
 
@@ -166,17 +192,23 @@ export class BusComponent implements OnInit {
                 this.Asientos[indice].urlimage = "~/images/asiento4.png";
 
 =======
+=======
+>>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
                 
                 this.index = this.Asientos_sel.findIndex(x => x.columna == asiento.columna && x.fila == asiento.fila);
                 
                 this.Asientos_sel[this.index].remove;
                 this.Asientos[indice].urlimage = "~/images/asiento4.png";
                 
+<<<<<<< HEAD
+>>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
+=======
 >>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
             }
             else if(asiento.urlimage == "~/images/asiento_sel.png")
             {
                 this.index = this.Asientos_sel.findIndex(x => x.columna == asiento.columna && x.fila == asiento.fila);
+<<<<<<< HEAD
 <<<<<<< HEAD
 
                 this.Asientos_sel[this.index].remove;
@@ -184,11 +216,16 @@ export class BusComponent implements OnInit {
 
             }
 =======
+=======
+>>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
                 
                 this.Asientos_sel[this.index].remove;
                 this.Asientos[indice].urlimage = "~/images/asiento.png";
                 
             } 
+<<<<<<< HEAD
+>>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
+=======
 >>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
             else if(asiento.urlimage == "~/images/asiento4.png")
             {
@@ -201,15 +238,21 @@ export class BusComponent implements OnInit {
                 this.Asientos[indice].urlimage = "~/images/asiento_sel.png";
             }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
             console.log(this.Asientos_sel);
         }
 
 =======
+=======
+>>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
             
             console.log(this.Asientos_sel);
         }
         
+<<<<<<< HEAD
+>>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
+=======
 >>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
     }
 
@@ -224,8 +267,13 @@ export class BusComponent implements OnInit {
     ponerImagen2(){
         for(let i in this.Asientos){
 <<<<<<< HEAD
+<<<<<<< HEAD
             if(isAndroid){
             if(this.obtenercol1() == 4 && this.Asientos[i].nivel == 1){
+=======
+            if(this.obtenercol1() == 4 && this.Asientos[i].nivel == 1){
+              
+>>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
 =======
             if(this.obtenercol1() == 4 && this.Asientos[i].nivel == 1){
               
@@ -234,6 +282,7 @@ export class BusComponent implements OnInit {
                     this.altoImagenniv1 = 60;
                     this.anchoImagenniv1 = 60;
                 } else if(320 < screen.mainScreen.widthDIPs){
+<<<<<<< HEAD
 <<<<<<< HEAD
 
                     this.altoImagenniv1 = 80;
@@ -248,6 +297,8 @@ export class BusComponent implements OnInit {
                 } else if(this.Asientos[i].disponibilidad == 1)
                 {
 =======
+=======
+>>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
                     this.altoImagenniv1 = 80;
                     this.anchoImagenniv1 = 80;
                 }
@@ -258,13 +309,20 @@ export class BusComponent implements OnInit {
                 
                 } else if(this.Asientos[i].disponibilidad == 1)
                 { 
+<<<<<<< HEAD
+>>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
+=======
 >>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
                     this.Asientos[i].urlimage = "~/images/asiento4_reservado.png";
                 }
 
             } else if(this.obtenercol1() == 5 && this.Asientos[i].nivel == 1  ){
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+                
+>>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
 =======
                 
 >>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
@@ -273,10 +331,15 @@ export class BusComponent implements OnInit {
                     this.anchoImagenniv1 = 60;
                 } else if(320 < screen.mainScreen.widthDIPs){
 <<<<<<< HEAD
+<<<<<<< HEAD
 
                     this.altoImagenniv1 = 60;
                     this.anchoImagenniv1 = 60;
 
+=======
+                    this.altoImagenniv1 = 60;
+                    this.anchoImagenniv1 = 60;
+>>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
 =======
                     this.altoImagenniv1 = 60;
                     this.anchoImagenniv1 = 60;
@@ -286,9 +349,15 @@ export class BusComponent implements OnInit {
               if(this.Asientos[i].disponibilidad == 0)
               {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
                   this.Asientos[i].urlimage  = "~/images/asiento.png";
 
+=======
+                  
+                  this.Asientos[i].urlimage  = "~/images/asiento.png";
+                
+>>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
 =======
                   
                   this.Asientos[i].urlimage  = "~/images/asiento.png";
@@ -302,7 +371,11 @@ export class BusComponent implements OnInit {
             }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             if(this.obtenercol2() == 4 && this.Asientos[i].nivel == 2){
+=======
+            if(this.obtenercol2() == 4 && this.Asientos[i].nivel == 2){ 
+>>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
 =======
             if(this.obtenercol2() == 4 && this.Asientos[i].nivel == 2){ 
 >>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
@@ -311,10 +384,15 @@ export class BusComponent implements OnInit {
                         this.anchoImagenniv2 = 60;
                     } else if(320 < screen.mainScreen.widthDIPs){
 <<<<<<< HEAD
+<<<<<<< HEAD
 
                         this.altoImagenniv2 = 75;
                         this.anchoImagenniv2 = 75;
 
+=======
+                        this.altoImagenniv2 = 75;
+                        this.anchoImagenniv2 = 75;
+>>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
 =======
                         this.altoImagenniv2 = 75;
                         this.anchoImagenniv2 = 75;
@@ -324,7 +402,11 @@ export class BusComponent implements OnInit {
                     {
                         this.Asientos[i].urlimage = "~/images/asiento4.png";
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+                        
+>>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
 =======
                         
 >>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
@@ -338,10 +420,15 @@ export class BusComponent implements OnInit {
                     this.anchoImagenniv2 = 50;
                 } else if(320 < screen.mainScreen.widthDIPs){
 <<<<<<< HEAD
+<<<<<<< HEAD
 
                     this.altoImagenniv2 = 65;
                     this.anchoImagenniv2 = 65;
 
+=======
+                    this.altoImagenniv2 = 65;
+                    this.anchoImagenniv2 = 65;
+>>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
 =======
                     this.altoImagenniv2 = 65;
                     this.anchoImagenniv2 = 65;
@@ -351,7 +438,11 @@ export class BusComponent implements OnInit {
                   {
                       this.Asientos[i].urlimage  = "~/images/asiento.png";
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+                    
+>>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
 =======
                     
 >>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
@@ -361,6 +452,7 @@ export class BusComponent implements OnInit {
                   }
             }
         }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
         else if(isIOS){
@@ -480,11 +572,17 @@ export class BusComponent implements OnInit {
 
 }
 =======
+=======
+>>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
     }
     
     iraCarritoCompra(){
         this.router.navigate(['/CarritoCompra',this.Asientos_sel]);
     }
     
+<<<<<<< HEAD
+}
+>>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
+=======
 }
 >>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c

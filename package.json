@@ -24,7 +24,10 @@
         "nativescript-angular": "~7.0.0",
         "nativescript-theme-core": "~1.0.4",
 <<<<<<< HEAD
+<<<<<<< HEAD
         "node-modules": "^1.0.1",
+=======
+>>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
 =======
 >>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
         "reflect-metadata": "~0.1.8",
@@ -33,6 +36,7 @@
         "zone.js": "^0.8.26"
     },
     "devDependencies": {
+<<<<<<< HEAD
 <<<<<<< HEAD
         "@angular/compiler-cli": "~7.1.0",
         "@nativescript/schematics": "~0.4.0",
@@ -43,6 +47,8 @@
     "readme": "NativeScript Application"
 }
 =======
+=======
+>>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
         "@nativescript/schematics": "~0.4.0",
         "nativescript-dev-typescript": "~0.7.0",
         "nativescript-dev-webpack": "~0.18.0",
@@ -51,4 +57,7 @@
     },
     "readme": "NativeScript Application"
 }
+<<<<<<< HEAD
+>>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
+=======
 >>>>>>> 2066f397195ecc15cff361adec6a385adcb9512c
